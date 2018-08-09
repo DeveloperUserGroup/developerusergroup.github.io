@@ -1,3 +1,12 @@
 $primary:#fc6700;
-$body-bg: #000;
-$body-color:#fff;
+$headings-color:$primary;
+$body-bg: rgb(52, 58, 70);
+$body-color:#000;
+$navbar-dark-active-color : $primary;
+
+.content-light {
+    background-color: white;
+    border-radius: 25px;   
+    padding-left: 25px;  
+    padding-right: 25px;
+}      

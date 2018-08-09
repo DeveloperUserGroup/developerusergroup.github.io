@@ -1,5 +1,27 @@
+--- 
+layout: default 
+title: About 
+permalink: /about/ 
 ---
-layout: default
-title: About
-permalink: /about/
----
+
+<div class="row">
+    <h1>History</h1>
+    <p>The developer user group started in 2010 when Mark Pearl launched the Languages User Group. Over time the group evolved
+        to be more than just programming languages and was renamed to the Developer User Group.</p>
+    <p>The Johannesburg Developer Usergroup has been hosted by Microsoft since 2012 and was a launch partner in their Community
+        Nights initiative.</p>
+    <p>In 2014, the Developer User Group officially became a non-profit organisation.</p>
+    <p>In 2014, Terence Kruger launched the Pretoria chapter of the group, which has been hosted by Momentum ever since.</p>
+    <p>In 2018, the Cape Town chapter of the user group was launched.</p>
+</div>
+<div class="row">
+    <h1>Organisers</h1>
+    <p>DevUG is run by a team of volunteers and one part time assistant. Without their hardwork it would not be possible for
+        the group to exist.</p>
+</div>
+<div class="row">
+    {% assign members = (site.data.members ) %} 
+    {% for member in members %}
+        {% include components/membercard.html member=member %}
+    {% endfor %}
+</div>

@@ -6,9 +6,18 @@ layout: compress
 {% include head.html %}
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         {% include header.html %} 
-        {{ content }} 
+        <div class="row">
+            <div class="col-lg-9 content-light">
+                {{ content }} 
+            </div>
+            <div class="col-lg-3">
+                <div class="content-light">
+                    {% include sponsors.html %}
+                </div>
+            </div>
+        </div>
         {% include footer.html %} 
         {% include scripts.html %}
     </div>

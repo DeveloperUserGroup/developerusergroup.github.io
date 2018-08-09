@@ -1,0 +1,18 @@
+<div class="col">
+    <div class="card">
+        <div>
+            <img src="{{ member.photo }}" alt="{{ member.name }} Photo" />
+        </div>
+        <div>
+            <h3>{{ member.name }}</h3>
+        </div>
+        <div>
+            <h4>{{ member.chapter }}</h4>
+        </div>
+        <div>
+            {% if member.twitter.size > 0 %}
+            <A href="" target="blank">twiiter</A>
+            {% endif %}
+        </div>
+    </div>
+</div>
