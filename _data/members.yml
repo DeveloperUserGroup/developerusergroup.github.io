@@ -1,69 +1,70 @@
-- name: "Candice Mesk"
-  photo:
-  twitter: 
+- name: "Bradley Van Aardt"
+  photo: bradley.png
+  twitter: theminidriver
   website:
-  linkedin:
-  charter: Johannesburg
+  linkedin: bradley-van-aardt-25923510a
+  chapter: Johannesburg  
   
-- name: "Robert MacLean"
-  photo:
-  twitter: rmaclean
-  website: https://www.sadev.co.za
-  linkedin:
-  charter: "Cape Town"
-
-- name: "Marie Atkins"
-  photo:
-  twitter: 
-  website:
-  linkedin:
-  charter: "Head Office"
-
-- name: "Jo Pearl"
-  photo:
-  twitter: 
-  website:
-  linkedin:
-  charter: Johannesburg
-
 - name: "Bryan Richards"
-  photo:
-  twitter: 
+  photo: bryan.png
+  twitter: bryanrichards
   website:
   linkedin:
-  charter:
+  chapter: "Head Office"
 
 - name: "Botha"
   photo:
   twitter: 
   website:
   linkedin:
-  charter:   
-  
-- name: "Bradley"
-  photo:
-  twitter: 
-  website:
-  linkedin:
-  charter:   
+  chapter:   
 
-- name: "Enrique"
-  photo:
-  twitter: 
+- name: "Candice Mesk Herodotou"
+  photo: candice.png
+  twitter: candicemesk
+  website: http://www.candicemesk.co.za/
+  linkedin: candice-mesk-95a35633
+  chapter: Johannesburg
+
+- name: "Enrique Geldenhuys"
+  photo: enrique.png
+  twitter: _eegee_
   website:
-  linkedin:  
-  charter:
+  linkedin: enriquegeldenhuys
+  chapter: Pretoria
 
 - name: "Ezra"
   photo:
   twitter: 
   website:
   linkedin:  
-  charter: "Cape Town" 
+  chapter: "Cape Town" 
 
-- name: "Lawrence"
+- name: "Jo Pearl"
+  photo: jo.png
+  twitter: 
+  website: https://plus.google.com/u/0/collection/MN7rQE
+  linkedin:
+  chapter: Johannesburg
+
+- name: "Lawrence Puttergill"
+  photo: lawrence.png
+  twitter: law91
+  website:
+  linkedin: lawrence-puttergill-6785928a
+  chapter: "Cape Town"
+
+- name: "Marie Atkins"
   photo:
   twitter: 
   website:
-  linkedin:  
-  charter: "Cape TOwn"
+  linkedin:
+  chapter: "Head Office"
+
+- name: "Robert MacLean"
+  photo: robert.png
+  twitter: rmaclean
+  website: https://www.sadev.co.za
+  linkedin: macleanr
+  chapter: "Cape Town"
+

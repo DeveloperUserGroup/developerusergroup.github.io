@@ -20,7 +20,7 @@ permalink: /about/
         the group to exist.</p>
 </div>
 <div class="row">
-    {% assign members = (site.data.members ) %} 
+    {% assign members = site.data.members %} 
     {% for member in members %}
         {% include components/membercard.html member=member %}
     {% endfor %}

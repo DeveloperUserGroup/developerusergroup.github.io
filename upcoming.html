@@ -1,0 +1,21 @@
+--- 
+layout: default 
+title: Upcoming 
+permalink: /upcoming 
+---
+
+<div class="row">
+    {% include components/upcomingCard.html id="jhb" region="Johannesburg" %}
+    {% include components/upcomingCard.html id="pta" region="Pretoria" %}
+    {% include components/upcomingCard.html id="cpt" region="Cape Town" %}
+</div>
+
+<script>
+    window.loadEvents = () => {
+        $.get('https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=developerug&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=42777762&sig=f0aecc535e990e20bd78cd1a919ccc80af6d3bd5').then(data => {
+            $(".upcomingLoadingjhb").hide();
+            $(".upcomingLoadingpta").hide();
+            $(".upcomingLoadingcpt").hide();
+        });
+    }
+</script>

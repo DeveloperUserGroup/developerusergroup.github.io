@@ -1,9 +1,11 @@
 <div class="row">
     <H2>Our sponsors</H2>
+</div>
+<div class="row">
     <p>DevUG would not be possible without the generous support of these sponsors.</p>
 </div>
-{% for sponsor in site.data.sponsors %}
-    {% include components/sponsor.html sponsor=sponsor %}
+{% for sponsor in site.data.sponsors %} 
+    {% include components/sponsor.html sponsor=sponsor %} 
 {% endfor %}
 <div class="row">
     <hr/>
