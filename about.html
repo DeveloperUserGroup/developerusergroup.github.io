@@ -11,7 +11,7 @@ permalink: /about/
     <p>The Johannesburg Developer Usergroup has been hosted by Microsoft since 2012 and was a launch partner in their Community
         Nights initiative.</p>
     <p>In 2014, the Developer User Group officially became a non-profit organisation.</p>
-    <p>In 2014, Terence Kruger launched the Pretoria chapter of the group, which has been hosted by Momentum ever since.</p>
+    <p>In 2014, Terence Kruger & Botha {TBD} launched the Pretoria chapter of the group, which has been hosted by Momentum ever since.</p>
     <p>In 2018, the Cape Town chapter of the user group was launched.</p>
 </div>
 <div class="row">
@@ -25,3 +25,14 @@ permalink: /about/
         {% include components/membercard.html member=member %}
     {% endfor %}
 </div>
+<div class="row">
+        <h1>Emeritus</h1>
+        <p>These wonderful folk have worked hard in the past with DevUG and we want to acknowledge them here for their contributions.</p>
+    </div>
+    <div class="row">
+        {% assign members = site.data.emeritus %} 
+        {% for member in members %}
+            {% include components/emerituscard.html member=member %}
+        {% endfor %}
+    </div>
+    

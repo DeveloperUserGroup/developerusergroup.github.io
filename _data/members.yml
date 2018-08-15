@@ -12,13 +12,6 @@
   linkedin:
   chapter: "Head Office"
 
-- name: "Botha"
-  photo:
-  twitter: 
-  website:
-  linkedin:
-  chapter:   
-
 - name: "Candice Mesk Herodotou"
   photo: candice.png
   twitter: candicemesk
@@ -33,11 +26,11 @@
   linkedin: enriquegeldenhuys
   chapter: Pretoria
 
-- name: "Ezra"
+- name: "Ezra Jivan"
   photo:
-  twitter: 
+  twitter: ezrajivan
   website:
-  linkedin:  
+  linkedin: ezrajivan 
   chapter: "Cape Town" 
 
 - name: "Jo Pearl"
@@ -54,11 +47,11 @@
   linkedin: lawrence-puttergill-6785928a
   chapter: "Cape Town"
 
-- name: "Marie Atkins"
-  photo:
-  twitter: 
-  website:
-  linkedin:
+- name: "Marié Atkins"
+  photo: marie.png
+  twitter: mariefrog1
+  website: https://mariefrog.weebly.com/
+  linkedin: marié-atkins-172bb558
   chapter: "Head Office"
 
 - name: "Robert MacLean"
