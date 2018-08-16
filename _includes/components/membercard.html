@@ -6,9 +6,11 @@
         <div class="text-center">
             <h3>{{ member.name }}</h3>
         </div>
+        {% if member.chapter.size > 0 %}
         <div class="text-center">
             <h4>{{ member.chapter }}</h4>
         </div>
+        {% endif %}
         <div class="text-center">
             {% if member.twitter.size > 0 %}
             <A href="https://twitter.com/{{member.twitter}}" rel="noopener noreferrer" target="_blank"><i class="fab fa-twitter"></i></A>

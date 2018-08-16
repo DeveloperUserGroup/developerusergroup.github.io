@@ -1,7 +1,7 @@
 --- 
 layout: default 
 title: About 
-permalink: /about/ 
+permalink: /about
 ---
 
 <div class="row">
@@ -32,7 +32,7 @@ permalink: /about/
     <div class="row">
         {% assign members = site.data.emeritus %} 
         {% for member in members %}
-            {% include components/emerituscard.html member=member %}
+            {% include components/membercard.html member=member %}
         {% endfor %}
     </div>
     
