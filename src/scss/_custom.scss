@@ -1,11 +1,10 @@
 $primary:#fc6700;
-$complimentary: hsl(184, 100%, 34%);
+$secondary: hsl(184, 100%, 34%);
 $headings-color:$primary;
 $body-bg: rgb(52, 58, 70);
 $body-color:#000;
 $navbar-dark-active-color: $primary;
-$link-color: $complimentary;
-$card-border-color: $complimentary;
+$link-color: $secondary;
 
 .navbar {
     background-color: black;
@@ -14,12 +13,20 @@ $card-border-color: $complimentary;
 .content-light {
     background-color: white;
     border-radius: 10px;
-    border-color: $complimentary;
+    border-color: $secondary;
     border-width: 1px;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.noEvents {
+    display: none !important;
+}
+
+.eventInfo{
+    display: none !important;
 }
 
 html {
@@ -33,7 +40,8 @@ html {
     width: 220px;
     height: 350px;  
     padding: 10px;
-    margin: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
     border-width: 2px;
 
     i {
@@ -44,5 +52,9 @@ html {
 hr {
     border: 0 !important;
     height: 1px !important;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), $complimentary, rgba(0, 0, 0, 0)) !important;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), $secondary, rgba(0, 0, 0, 0)) !important;
+}
+
+.upcomingCard {
+    margin-right: 5px;
 }
