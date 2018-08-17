@@ -1,7 +1,13 @@
 <div class="col">
     <div class="card memberCard border border-secondary rounded shadow">
         <div>
+        {% if member.photo.size > 0 %}
             <img src="/imgs/team/{{ member.photo }}" alt="{{ member.name }} Photo" />
+        {% else %}
+            <div class="unknownHero text-center">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            {% endif %}
         </div>
         <div class="text-center">
             <h3>{{ member.name }}</h3>

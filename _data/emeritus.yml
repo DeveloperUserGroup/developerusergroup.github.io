@@ -1,7 +1,7 @@
-- name: "Botha"
-  photo:
+- name: "Botha van der Vyver"
+  photo: botha.png
   twitter: 
-  website:
+  website: https://www.justsolve.co.za
   linkedin:
 
 - name: "Mark Pearl"

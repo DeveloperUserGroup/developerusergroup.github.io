@@ -47,6 +47,13 @@ html {
     i {
         font-size: 2.5rem;
     }
+
+    .unknownHero {
+        color: $secondary;
+        i {
+            font-size: 13rem;
+        }
+    }
 }
 
 hr {
