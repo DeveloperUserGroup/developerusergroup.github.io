@@ -1,20 +1,20 @@
 - name: "Botha van der Vyver"
-  photo: botha.png
+  photo: botha.png 
   twitter: 
   website: https://www.justsolve.co.za
   linkedin:
 
 - name: "Mark Pearl"
-  photo:
-  twitter: 
+  photo: mark.png
+  twitter: MarkPearlCoZa
   website:
-  linkedin:
+  linkedin: mark-pearl-89984314
 
 - name: "Sean Radley"
-  photo:
-  twitter: 
+  photo: sean.png
+  twitter: seanradleyZA
   website:
-  linkedin:
+  linkedin: sean-radley-91599a9
 
 - name: "Terence Kruger"
   photo:
