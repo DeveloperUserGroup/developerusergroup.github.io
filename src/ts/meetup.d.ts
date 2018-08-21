@@ -1,5 +1,4 @@
-declare module meetup {
-
+declare module meetup {    
     export interface Venue {
         country: string;
         localized_country_name: string;
@@ -68,5 +67,37 @@ declare module meetup {
         meta: Meta;
     }
 
+    export interface PhotoResults {
+        results: PhotoResult[];
+        meta:    Meta;
+    }
+     
+    export interface PhotoResult {
+        utc_offset:   number;
+        site_link:    string;
+        highres_link: string;
+        photo_id:     number;
+        created:      number;
+        base_url:     string;
+        caption?:     string;
+        type:         string;
+        thumb_link:   string;
+        photo_album:  PhotoAlbum;
+        member:       Member;
+        photo_link:   string;
+        updated:      number;
+    }
+    
+    export interface Member {
+        member_id: number;
+        name:      string;
+    }
+
+    
+    export interface PhotoAlbum {
+        photo_album_id: number;
+        group_id:       number;
+        event_id?:      string;
+    }
 }
 

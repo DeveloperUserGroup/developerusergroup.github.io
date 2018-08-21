@@ -1,18 +1,32 @@
 <div class="col upcomingFor{{ include.id }} upcomingCard border border-secondary shadow">
-    <div class="row text-center">
-        <h1>{{ include.region }}</h1>
-    </div>
+
     <div class="row text-center upcomingLoading">
         <div class="lds-ripple">
             <div></div>
             <div></div>
         </div>
     </div>
-    <div class="row noEvents"><h2>No events scheduled 😿</h2></div>
+    <div class="row noEvents">
+        <h2>No events scheduled for {{ include.region }} 😿</h2>
+    </div>
     <span class="eventInfo">
-        <div class="row"><h5 class="text-secondary text-center">!!title!!</h5></div>
-        <div class="row"><h5><small class="text-center text-muted">!!when!!</small></h5></div>
-        <div class="row"><a role="button" class="btn btn-primary btn-lg btn-block" href="!!url!!" rel="noopener noreferrer" target="_blank">RSVP</a></div>
-        <div class="row mt-2"><div class="col bg-success text-white">Going: !!going!!</div><div class="col bg-warning text-white">Maybe: !!maybe!!</div></div>
+        <div class="row text-center">
+            <h1>{{ include.region }}</h1>
+        </div>
+        <div class="row">
+            <h5 class="text-secondary text-center">!!title!!</h5>
+        </div>
+        <div class="row">
+            <h5>
+                <small class="text-center text-muted">!!when!!</small>
+            </h5>
+        </div>
+        <div class="row">
+            <a role="button" class="btn btn-primary btn-lg btn-block" href="!!url!!" rel="noopener noreferrer" target="_blank">RSVP</a>
+        </div>
+        <div class="row mt-2">
+            <div class="col bg-success text-white">Going: !!going!!</div>
+            <div class="col bg-warning text-white">Maybe: !!maybe!!</div>
+        </div>
     </span>
 </div>

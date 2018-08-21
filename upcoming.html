@@ -3,18 +3,21 @@ layout: default
 title: Upcoming 
 permalink: /upcoming 
 ---
-
-<div class="row">
-    {% include components/upcomingCard.html id="jhb" region="Johannesburg" %}
+<div id="upcomingEvents">
+    <div class="row">
+        {% include components/upcomingCard.html id="jhb" region="Johannesburg" %}
+    </div>
+    <div class="row mt-4">
+        {% include components/upcomingCard.html id="pta" region="Pretoria" %}
+    </div>
+    <div class="row mt-4">    
+        {% include components/upcomingCard.html id="cpt" region="Cape Town" %}
+    </div>
 </div>
 <div class="row mt-4">
-    {% include components/upcomingCard.html id="pta" region="Pretoria" %}
-</div>
-<div class="row mt-4">    
-    {% include components/upcomingCard.html id="cpt" region="Cape Town" %}
-</div>
-<div class="row mt-4">
-    <p>If you have any issues with the above, you can visit us on <a rel="noopener noreferrer" target="_blank" href="https://www.meetup.com/DeveloperUG/">Meetup.com</a></p>
+    <div class="col text-center">
+        <p>If you have any issues with the above, you can visit us on <a rel="noopener noreferrer" target="_blank" href="https://www.meetup.com/DeveloperUG/">Meetup.com</a></p>
+    </div>
 </div>
  
 <script src="/js/upcomingEvents.js"></script>

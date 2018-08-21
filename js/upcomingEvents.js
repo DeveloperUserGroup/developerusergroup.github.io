@@ -9,11 +9,13 @@ function cleanName(name) {
     }
     return name;
 }
-function showData(id, data, city) {
+function loadData(id, data, city) {
     const card = $(`.upcomingFor${id}`);
     const sortedEventsForCity = data.results.filter(value => value.venue.city === city).sort((a, b) => a.time - b.time);
+    let time;
     if (sortedEventsForCity.length > 0) {
         const firstEvent = sortedEventsForCity[0];
+        time = firstEvent.time;
         const eventDate = new Date(firstEvent.time);
         const when = `${eventDate.toLocaleDateString("en-za", dateDisplayOptions)} ${eventDate.toLocaleTimeString("en-za")}`;
         const nextEvent = {
@@ -32,17 +34,21 @@ function showData(id, data, city) {
             eventInfoText = eventInfoText.replace(`!!${key}!!`, value);
         });
         eventInfo.html(eventInfoText);
-        eventInfo.removeClass('eventInfo');
     }
     else {
         card.find(".noEvents").show();
     }
-    card.find(".upcomingLoading").hide();
+    return { card, time };
 }
 function loaded(data) {
-    showData("jhb", data, "Johannesburg");
-    showData("pta", data, "Pretoria");
-    showData("cpt", data, "Cape Town");
+    const jhb = loadData("jhb", data, "Johannesburg");
+    const pta = loadData("pta", data, "Pretoria");
+    const cpt = loadData("cpt", data, "Cape Town");
+    $('#upcomingEvents').append([jhb, pta, cpt].sort((a, b) => a.time - b.time).map(item => {
+        item.card.find(".upcomingLoading").hide();
+        item.card.find(".eventInfo").removeClass('eventInfo');
+        return item.card.detach();
+    }));
 }
 window.loadEvents = () => {
     $.ajax({

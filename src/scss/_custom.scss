@@ -8,6 +8,7 @@ $link-color: $secondary;
 
 .navbar {
     background-color: black;
+    margin-bottom: 10px;
 }
 
 .content-light {
@@ -64,4 +65,25 @@ hr {
 
 .upcomingCard {
     margin-right: 5px;
+}
+
+.form-control {
+    display: initial !important;
+}
+
+.newsletterButton{
+    float: right;
+    margin-top: 5px;   
+}
+
+.newsLetterHeader {
+    letter-spacing: -0.9px;
+}
+
+.carousel-image{
+    max-height: 
+    img {
+        object-fit: contain;
+        max-height: 300px;
+    }
 }
