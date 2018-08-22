@@ -16,7 +16,8 @@ function photosloaded(data) {
         img.classList.add('w-100');
         img.classList.add('border');
         img.classList.add('border-secondary');
-        img.src = result.photo_link;
+        img.classList.add('lazy');
+        img.setAttribute('data-src', result.photo_link);
         img.alt = result.caption || `Meetup photo from ${result.member.name}`;
         div.appendChild(img);
         return div;
@@ -24,6 +25,7 @@ function photosloaded(data) {
     const target = $('#meetupPhotosCarousel').find('.carousel-inner');
     target.html('');
     target.append(images);
+    window.myLazyLoad.update();
 }
 window.loadEvents = () => {
     $.ajax({
