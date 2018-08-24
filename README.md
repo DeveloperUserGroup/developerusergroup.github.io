@@ -1,8 +1,6 @@
 #Normal dev
-- `npm run sass:build` to update css from scss
-- `npm run tsc-watch` if you doing typescript dev
-- `npm run server` to run website
-- `npm run dev` will launch server and typescript compile
+- `npm start` will get everything up and running. The server and all the transpilers.
+  - there is a weird bug I haven't solved where you need to hit enter once the transpilers start up for the server to start
 
 #first runs
 - `bundle install` - make sure you have jekyll & ruby installed
