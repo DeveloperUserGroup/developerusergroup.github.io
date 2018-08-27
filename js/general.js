@@ -1,5 +1,6 @@
 "use strict";
 $(function () {
+    window.version = '0.2';
     /* -=-=-=-=- THIS IS FOR THE FOOTER -=-=-=-=-=-=-=- */
     $("#currentYear").text((new Date()).getFullYear());
     /* -=-=-=-=- THIS IS USED ON UPCOMING ONLY -=-=-=-=-=-=-=- */

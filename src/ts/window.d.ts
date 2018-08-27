@@ -4,5 +4,6 @@ declare global {
         loadEvents: any,
         dataLayer: Array<any>,
         myLazyLoad: ILazyLoad,
+        version: String, 
     }
 }

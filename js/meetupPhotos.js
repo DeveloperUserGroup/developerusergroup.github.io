@@ -2,7 +2,7 @@
 function photosloaded(data) {
     var first = true;
     var images = data.results
-        .filter(function (item) { return !!item.photo_album.event_id; })
+        .filter(function (item) { return !!item.photo_album.event_id && !!item.caption && item.caption.indexOf("#site") > -1; })
         .map(function (result) {
         var div = document.createElement('div');
         div.classList.add('carousel-item');

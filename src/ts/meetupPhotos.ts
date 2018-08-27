@@ -1,7 +1,7 @@
 function photosloaded(data: meetup.PhotoResults) {
     let first = true;
     const images = data.results
-        .filter(item => !!item.photo_album.event_id)
+        .filter(item => !!item.photo_album.event_id && !!item.caption && item.caption.indexOf("#site") > -1)
         .map(result => {
             const div = document.createElement('div');
             div.classList.add('carousel-item');
@@ -22,7 +22,8 @@ function photosloaded(data: meetup.PhotoResults) {
 
             div.appendChild(img);
             return div;
-        })
+        });
+
     const target = $('#meetupPhotosCarousel').find('.carousel-inner');
     target.html('');
     target.append(images)
