@@ -1,7 +1,7 @@
 function photosloaded(data: meetup.PhotoResults) {
     let first = true;
-    const images = data.results
-        .filter(item => !!item.photo_album.event_id && !!item.caption && item.caption.indexOf("#site") > -1)
+    const images = data.data
+        .filter(item => !!item.photo_album.event.id && !!item.caption && item.caption.indexOf("#site") > -1)
         .map(result => {
             const div = document.createElement('div');
             div.classList.add('carousel-item');
@@ -32,7 +32,7 @@ function photosloaded(data: meetup.PhotoResults) {
 
 window.loadEvents = () => {
     $.ajax({
-        url: 'https://api.meetup.com/2/photos?offset=0&format=json&group_urlname=developerug&photo-host=public&page=20&fields=&order=time&desc=True&sig_id=42777762&sig=f532b7eaa2f44d7e0a388c8af271fa6da7123c96&callback=callback',
+        url: 'https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=20',
         dataType: "jsonp",
         jsonpCallback: "photosloaded"
     });

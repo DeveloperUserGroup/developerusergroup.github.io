@@ -13,7 +13,7 @@ function cleanName(name:string) :string{
 
 function loadData(id: string, data: meetup.eventResults, city: string) {
     const card = $(`.upcomingFor${id}`)
-    const sortedEventsForCity = data.results.filter(value => value.venue.city === city).sort((a, b) => a.time - b.time);
+    const sortedEventsForCity = data.data.filter(value => value.venue.city === city).sort((a, b) => a.time - b.time);
     let time;
     if (sortedEventsForCity.length > 0) {
         const firstEvent = sortedEventsForCity[0];
@@ -33,7 +33,7 @@ function loadData(id: string, data: meetup.eventResults, city: string) {
         let eventInfoText = eventInfo.html();
         Object.entries(nextEvent).forEach(keyValue => { 
             const key = keyValue[0];
-            const value = keyValue[1].toString()
+            const value = (keyValue[1] ?? "").toString()
 
             eventInfoText = eventInfoText.replace(`!!${key}!!`, value);
         });
@@ -60,7 +60,7 @@ function loaded(data: meetup.eventResults) {
 
 window.loadEvents = () => {
     $.ajax({
-        url: 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=developerug&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=42777762&sig=f0aecc535e990e20bd78cd1a919ccc80af6d3bd5&callback=callback',
+        url: 'https://api.meetup.com/developerug/events?&sign=true&photo-host=secure&page=20',
         dataType: "jsonp",
         jsonpCallback: "loaded"
     });

@@ -1,8 +1,8 @@
 "use strict";
 function photosloaded(data) {
     var first = true;
-    var images = data.results
-        .filter(function (item) { return !!item.photo_album.event_id && !!item.caption && item.caption.indexOf("#site") > -1; })
+    var images = data.data
+        .filter(function (item) { return !!item.photo_album.event.id && !!item.caption && item.caption.indexOf("#site") > -1; })
         .map(function (result) {
         var div = document.createElement('div');
         div.classList.add('carousel-item');
@@ -29,7 +29,7 @@ function photosloaded(data) {
 }
 window.loadEvents = function () {
     $.ajax({
-        url: 'https://api.meetup.com/2/photos?offset=0&format=json&group_urlname=developerug&photo-host=public&page=20&fields=&order=time&desc=True&sig_id=42777762&sig=f532b7eaa2f44d7e0a388c8af271fa6da7123c96&callback=callback',
+        url: 'https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=20',
         dataType: "jsonp",
         jsonpCallback: "photosloaded"
     });

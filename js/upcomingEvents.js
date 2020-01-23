@@ -12,7 +12,7 @@ function cleanName(name) {
 }
 function loadData(id, data, city) {
     var card = $(".upcomingFor" + id);
-    var sortedEventsForCity = data.results.filter(function (value) { return value.venue.city === city; }).sort(function (a, b) { return a.time - b.time; });
+    var sortedEventsForCity = data.data.filter(function (value) { return value.venue.city === city; }).sort(function (a, b) { return a.time - b.time; });
     var time;
     if (sortedEventsForCity.length > 0) {
         var firstEvent = sortedEventsForCity[0];
@@ -30,8 +30,9 @@ function loadData(id, data, city) {
         var eventInfo = card.find(".eventInfo");
         var eventInfoText_1 = eventInfo.html();
         Object.entries(nextEvent).forEach(function (keyValue) {
+            var _a;
             var key = keyValue[0];
-            var value = keyValue[1].toString();
+            var value = (_a = keyValue[1], (_a !== null && _a !== void 0 ? _a : "")).toString();
             eventInfoText_1 = eventInfoText_1.replace("!!" + key + "!!", value);
         });
         eventInfo.html(eventInfoText_1);
@@ -53,7 +54,7 @@ function loaded(data) {
 }
 window.loadEvents = function () {
     $.ajax({
-        url: 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=developerug&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=42777762&sig=f0aecc535e990e20bd78cd1a919ccc80af6d3bd5&callback=callback',
+        url: 'https://api.meetup.com/developerug/events?&sign=true&photo-host=secure&page=20',
         dataType: "jsonp",
         jsonpCallback: "loaded"
     });
