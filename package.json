@@ -4,7 +4,6 @@
   "repository": "https://github.com/rmaclean/devug",
   "watch": {
     "build:sass": "/src/scss/*.scss",
-    "build:css": "/css/devug.css",
     "build:javascript": [
       "js/bootstrap.min.js",
       "js/lazyload.min.js",
