@@ -29,7 +29,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/jquery": "^3.3.31",
+    "@types/jquery": "^3.3.33",
     "autoprefixer": "^9.7.4",
     "bootstrap": "^4.4.1",
     "cpx": "^1.5.0",
@@ -39,10 +39,10 @@
     "pidtree": "^0.3.0",
     "postcss-cli": "^7.1.0",
     "purify-css": "^1.2.6",
-    "typescript": "^3.7.5",
-    "uglify-js": "^3.7.6"
+    "typescript": "^3.8.3",
+    "uglify-js": "^3.8.0"
   },
   "dependencies": {
-    "vanilla-lazyload": "^12.4.0"
+    "vanilla-lazyload": "^12.5.1"
   }
 }
