@@ -32,7 +32,7 @@ function loadData(id, data, city) {
         Object.entries(nextEvent).forEach(function (keyValue) {
             var _a;
             var key = keyValue[0];
-            var value = (_a = keyValue[1], (_a !== null && _a !== void 0 ? _a : "")).toString();
+            var value = ((_a = keyValue[1]) !== null && _a !== void 0 ? _a : "").toString();
             eventInfoText_1 = eventInfoText_1.replace("!!" + key + "!!", value);
         });
         eventInfo.html(eventInfoText_1);
