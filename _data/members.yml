@@ -48,7 +48,7 @@
   chapter: "Head Office"
 
 - name: "Robert MacLean"
-  photo: robert.png
+  photo: robert.jpg
   twitter: rmaclean
   website: https://www.sadev.co.za
   linkedin: macleanr
@@ -62,9 +62,9 @@
   chapter: "Cape Town"
 
 - name: "Ewald Horn"
-  photo: 
-  twitter: 
-  website: 
-  linkedin: 
+  photo: ewald.jpg
+  twitter: EwaldHorn
+  website: https://www.nofuss.co.za/profile.html 
+  linkedin: ewaldhorn
   chapter: "Cape Town"
 
