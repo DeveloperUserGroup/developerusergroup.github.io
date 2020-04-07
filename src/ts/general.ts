@@ -1,5 +1,5 @@
 $(function () {
-    window.version = '0.2';
+    window.version = '0.3';
 
     /* -=-=-=-=- THIS IS FOR THE FOOTER -=-=-=-=-=-=-=- */
     $("#currentYear").text((new Date()).getFullYear());
@@ -17,14 +17,4 @@ $(function () {
     window.myLazyLoad = new LazyLoad({
         elements_selector: ".lazy"
     });
-
-    /* -=-=-=-=- THIS IS FOR GOOGLE ANALYTICS -=-=-=-=-=-=-=- */
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-123750504-1');
 });

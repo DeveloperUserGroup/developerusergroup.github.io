@@ -1,106 +1,101 @@
 declare module meetup {
-    export interface Venue {
-        country: string;
-        localized_country_name: string;
-        city: string;
-        address_1: string;
-        address_2: string;
-        name: string;
-        lon: number;
+    export interface MemberPhoto {
         id: number;
-        lat: number;
-        repinned: boolean;
-    }
-
-    export interface Group {
-        join_mode: string;
-        created: any;
-        name: string;
-        group_lon: number;
-        id: number;
-        urlname: string;
-        group_lat: number;
-        who: string;
-    }
-
-    export interface Result {
-        utc_offset: number;
-        venue: Venue;
-        rsvp_limit: number;
-        headcount: number;
-        visibility: string;
-        waitlist_count: number;
-        created: any;
-        maybe_rsvp_count: number;
-        description: string;
-        how_to_find_us: string;
-        event_url: string;
-        yes_rsvp_count: number;
-        duration: number;
-        announced: boolean;
-        name: string;
-        id: string;
-        photo_url: string;
-        time: any;
-        updated: any;
-        group: Group;
-        status: string;
-    }
-
-    export interface Meta {
-        next: string;
-        method: string;
-        total_count: number;
-        link: string;
-        count: number;
-        description: string;
-        lon: string;
-        title: string;
-        url: string;
-        id: string;
-        updated: number;
-        lat: string;
-    }
-
-    export interface eventResults {
-        data: Result[];
-        meta: Meta;
-    }
-
-    export interface PhotoResults {
-        data: PhotoResult[];
-        meta: Meta;
-    }
-
-    export interface PhotoResult {
-        utc_offset: number;
-        site_link: string;
         highres_link: string;
-        photo_id: number;
-        created: number;
-        base_url: string;
-        caption?: string;
-        type: string;
-        thumb_link: string;
-        photo_album: PhotoAlbum;
-        member: Member;
         photo_link: string;
-        updated: number;
+        thumb_link: string;
+        type: string;
+        base_url: string;
     }
 
     export interface Member {
-        member_id: number;
+        id: number;
         name: string;
+        bio: string;
+        photo: MemberPhoto;
+        role: string;
     }
 
-    export interface PhotoAlbum {
-        photo_album_id: number;
-        group_id: number;
-        event: Event;
+    export interface Photo {
+        id: number;
+        highres_link: string;
+        photo_link: string;
+        thumb_link: string;
+        type: string;
+        base_url: string;
+        link: string;
+        created: any;
+        updated: any;
+        utc_offset: number;
+        member: Member;
+        caption: string;
+    }
+
+    export interface Venue {
+        id: number;
+        name: string;
+        repinned: boolean;
+        country: string;
+        localized_country_name: string;
+        lat?: number;
+        lon?: number;
+        address_1: string;
+        city: string;
+        address_2: string;
+    }
+
+    export interface Group {
+        created: any;
+        name: string;
+        id: number;
+        join_mode: string;
+        lat: number;
+        lon: number;
+        urlname: string;
+        who: string;
+        localized_location: string;
+        state: string;
+        country: string;
+        region: string;
+        timezone: string;
     }
 
     export interface Event {
-        id: string
+        created: any;
+        duration: number;
+        id: string;
+        name: string;
+        date_in_series_pattern: boolean;
+        status: string;
+        time: any;
+        local_date: string;
+        local_time: string;
+        updated: any;
+        utc_offset: number;
+        waitlist_count: number;
+        yes_rsvp_count: number;
+        venue: Venue;
+        group: Group;
+        link: string;
+        description: string;
+        visibility: string;
+        member_pay_fee: boolean;
+        how_to_find_us: string;
+    }
+
+    export interface Meta {
+        total_count: number,
+        next_link: string,
+    }
+
+    export interface Events {
+        data: Event[];
+        meta: Meta,
+    }
+
+    export interface Photos {
+        data: Photo[];
+        meta: Meta,
     }
 }
 

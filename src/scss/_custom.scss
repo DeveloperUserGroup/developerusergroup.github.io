@@ -26,14 +26,16 @@ $link-color: $secondary;
     display: none !important;
 }
 
-.eventInfo{
+.eventInfo {
     display: none !important;
 }
-   
+
 html {
     font-size: 0.9rem;
+
     body {
         background-color: #282c36;
+
         @media (min-width: 576px) {
             background-image: url('/imgs/wallpaper.png');
         }
@@ -42,7 +44,7 @@ html {
 
 .memberCard {
     width: 220px;
-    height: 350px;  
+    height: 350px;
     padding: 10px;
     margin-top: 5px;
     margin-right: 5px;
@@ -54,10 +56,11 @@ html {
 
     .unknownHero {
         color: $secondary;
+
         i {
             font-size: 13rem;
         }
-    }
+    } 
 }
 
 hr {
@@ -67,23 +70,25 @@ hr {
 }
 
 .upcomingCard {
+    padding: 0px 25px 5px 25px !important; 
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .form-control {
     display: initial !important;
 }
 
-.newsletterButton{
+.newsletterButton {
     float: right;
-    margin-top: 5px;   
+    margin-top: 5px;
 }
 
-.newsLetterHeader {     
+.newsLetterHeader {
     letter-spacing: -0.9px;
 }
 
-.carousel-image{
+.carousel-image {
     img {
         object-fit: contain;
         max-height: 300px;
@@ -91,7 +96,7 @@ hr {
 }
 
 .mobileSpacer {
-    @media (max-width: 992px) { 
+    @media (max-width: 992px) {
         margin-top: 5px;
     }
 }

@@ -2,7 +2,8 @@
 function photosloaded(data) {
     var first = true;
     var images = data.data
-        .filter(function (item) { return !!item.photo_album.event.id && !!item.caption && item.caption.indexOf("#site") > -1; })
+        .sort(function (a, b) { return b.created - a.created; })
+        .filter(function (item) { return item.caption == "#site"; })
         .map(function (result) {
         var div = document.createElement('div');
         div.classList.add('carousel-item');
@@ -27,10 +28,19 @@ function photosloaded(data) {
     target.append(images);
     window.myLazyLoad.update();
 }
-window.loadEvents = function () {
+function getPhotoCount(data) {
+    var pageSize = 200;
+    var offSet = Math.floor(data.meta.total_count / pageSize) - 1;
     $.ajax({
-        url: 'https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=20',
+        url: "https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=" + pageSize + "&offset=" + offSet,
         dataType: "jsonp",
         jsonpCallback: "photosloaded"
+    });
+}
+window.loadEvents = function () {
+    $.ajax({
+        url: 'https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=1',
+        dataType: "jsonp",
+        jsonpCallback: "getPhotoCount"
     });
 };

@@ -10,43 +10,38 @@ function cleanName(name) {
     }
     return name;
 }
-function loadData(id, data, city) {
+function loadData(id, event) {
     var card = $(".upcomingFor" + id);
-    var sortedEventsForCity = data.data.filter(function (value) { return value.venue.city === city; }).sort(function (a, b) { return a.time - b.time; });
-    var time;
-    if (sortedEventsForCity.length > 0) {
-        var firstEvent = sortedEventsForCity[0];
-        time = firstEvent.time;
-        var eventDate = new Date(firstEvent.time);
-        var when = eventDate.toLocaleDateString("en-za", dateDisplayOptions) + " " + eventDate.toLocaleTimeString("en-za");
-        var nextEvent = {
-            when: when,
-            title: cleanName(firstEvent.name),
-            description: firstEvent.description,
-            url: firstEvent.event_url,
-            going: firstEvent.yes_rsvp_count,
-            maybe: firstEvent.maybe_rsvp_count
-        };
-        var eventInfo = card.find(".eventInfo");
-        var eventInfoText_1 = eventInfo.html();
-        Object.entries(nextEvent).forEach(function (keyValue) {
-            var _a;
-            var key = keyValue[0];
-            var value = ((_a = keyValue[1]) !== null && _a !== void 0 ? _a : "").toString();
-            eventInfoText_1 = eventInfoText_1.replace("!!" + key + "!!", value);
-        });
-        eventInfo.html(eventInfoText_1);
-    }
-    else {
-        card.find(".noEvents").show();
-    }
+    var time = event.time;
+    var eventDate = new Date(event.time);
+    var when = eventDate.toLocaleDateString("en-za", dateDisplayOptions) + " " + eventDate.toLocaleTimeString("en-za");
+    var map = "https://www.google.com/maps/@" + event.venue.lat + "," + event.venue.lon + ",15z";
+    var nextEvent = {
+        when: when,
+        map: map,
+        title: cleanName(event.name),
+        description: event.description,
+        url: event.link,
+        going: event.yes_rsvp_count,
+        venue: event.venue.name
+    };
+    var eventInfo = card.find(".eventInfo");
+    var eventInfoText = eventInfo.html();
+    Object.entries(nextEvent).forEach(function (keyValue) {
+        var _a;
+        var key = keyValue[0];
+        var value = ((_a = keyValue[1]) !== null && _a !== void 0 ? _a : "").toString();
+        eventInfoText = eventInfoText.replace("!!" + key + "!!", value);
+    });
+    eventInfo.html(eventInfoText);
     return { card: card, time: time };
 }
 function loaded(data) {
-    var jhb = loadData("jhb", data, "Johannesburg");
-    var pta = loadData("pta", data, "Pretoria");
-    var cpt = loadData("cpt", data, "Cape Town");
-    $('#upcomingEvents').append([jhb, pta, cpt].sort(function (a, b) { return a.time - b.time; }).map(function (item) {
+    var sortedEvents = data.data.sort(function (a, b) { return a.time - b.time; });
+    var first = loadData("first", sortedEvents[0]);
+    var second = loadData("second", sortedEvents[1]);
+    var third = loadData("third", sortedEvents[2]);
+    $('#upcomingEvents').append([first, second, third].map(function (item) {
         item.card.find(".upcomingLoading").hide();
         item.card.find(".eventInfo").removeClass('eventInfo');
         return item.card.detach();

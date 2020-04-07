@@ -1,6 +1,6 @@
 const dateDisplayOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-function cleanName(name:string) :string{
+function cleanName(name: string): string {
     const prefixesToClean = ["JHB:", "PTA:", "Cape Town:"];
     for (const prefix of prefixesToClean) {
         if (name.indexOf(prefix) == 0) {
@@ -11,49 +11,46 @@ function cleanName(name:string) :string{
     return name;
 }
 
-function loadData(id: string, data: meetup.eventResults, city: string) {
+function loadData(id: string, event: meetup.Event) {
     const card = $(`.upcomingFor${id}`)
-    const sortedEventsForCity = data.data.filter(value => value.venue.city === city).sort((a, b) => a.time - b.time);
-    let time;
-    if (sortedEventsForCity.length > 0) {
-        const firstEvent = sortedEventsForCity[0];
-        time = firstEvent.time;
-        const eventDate = new Date(firstEvent.time);
-        const when = `${eventDate.toLocaleDateString("en-za", dateDisplayOptions)} ${eventDate.toLocaleTimeString("en-za")}`
-        const nextEvent = {
-            when,
-            title: cleanName(firstEvent.name),
-            description: firstEvent.description,
-            url: firstEvent.event_url,
-            going: firstEvent.yes_rsvp_count,
-            maybe: firstEvent.maybe_rsvp_count
-        }
-
-        const eventInfo = card.find(".eventInfo");
-        let eventInfoText = eventInfo.html();
-        Object.entries(nextEvent).forEach(keyValue => { 
-            const key = keyValue[0];
-            const value = (keyValue[1] ?? "").toString()
-
-            eventInfoText = eventInfoText.replace(`!!${key}!!`, value);
-        });
-        eventInfo.html(eventInfoText);
-    } else {
-        card.find(".noEvents").show();
+    let time = event.time;
+    const eventDate = new Date(event.time);
+    const when = `${eventDate.toLocaleDateString("en-za", dateDisplayOptions)} ${eventDate.toLocaleTimeString("en-za")}`
+    const map = `https://www.google.com/maps/@${event.venue.lat},${event.venue.lon},15z`
+    const nextEvent = {
+        when,
+        map,
+        title: cleanName(event.name),
+        description: event.description,
+        url: event.link,
+        going: event.yes_rsvp_count,
+        venue: event.venue.name
     }
 
-    return {card, time};
+    const eventInfo = card.find(".eventInfo");
+    let eventInfoText = eventInfo.html();
+    Object.entries(nextEvent).forEach(keyValue => {
+        const key = keyValue[0];
+        const value = (keyValue[1] ?? "").toString()
+
+        eventInfoText = eventInfoText.replace(`!!${key}!!`, value);
+    });
+
+    eventInfo.html(eventInfoText);
+
+    return { card, time };
 }
 
-function loaded(data: meetup.eventResults) {
-    const jhb = loadData("jhb", data, "Johannesburg")
-    const pta = loadData("pta", data, "Pretoria")
-    const cpt = loadData("cpt", data, "Cape Town")
+function loaded(data: meetup.Events) {
+    const sortedEvents = data.data.sort((a, b) => a.time - b.time);
+    const first = loadData("first", sortedEvents[0])
+    const second = loadData("second", sortedEvents[1])
+    const third = loadData("third", sortedEvents[2])
 
-    $('#upcomingEvents').append([jhb, pta, cpt].sort((a, b) => a.time - b.time).map(item => { 
+    $('#upcomingEvents').append([first, second, third].map(item => {
         item.card.find(".upcomingLoading").hide();
         item.card.find(".eventInfo").removeClass('eventInfo');
-        return item.card.detach(); 
+        return item.card.detach();
     }));
 
 }

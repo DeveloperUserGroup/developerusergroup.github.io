@@ -1,7 +1,8 @@
-function photosloaded(data: meetup.PhotoResults) {
+function photosloaded(data: meetup.Photos) {
     let first = true;
     const images = data.data
-        .filter(item => !!item.photo_album.event.id && !!item.caption && item.caption.indexOf("#site") > -1)
+        .sort((a, b) => b.created - a.created)
+        .filter(item => item.caption == "#site")
         .map(result => {
             const div = document.createElement('div');
             div.classList.add('carousel-item');
@@ -30,10 +31,20 @@ function photosloaded(data: meetup.PhotoResults) {
     window.myLazyLoad.update();
 }
 
-window.loadEvents = () => {
+function getPhotoCount(data: meetup.Photos) {
+    const pageSize = 200;
+    const offSet = Math.floor(data.meta.total_count / pageSize) - 1;
     $.ajax({
-        url: 'https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=20',
+        url: `https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=${pageSize}&offset=${offSet}`,
         dataType: "jsonp",
         jsonpCallback: "photosloaded"
+    });
+}
+
+window.loadEvents = () => {
+    $.ajax({
+        url: 'https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=1',
+        dataType: "jsonp",
+        jsonpCallback: "getPhotoCount"
     });
 }
