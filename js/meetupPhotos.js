@@ -3,7 +3,7 @@ function photosloaded(data) {
     var first = true;
     var images = data.data
         .sort(function (a, b) { return b.created - a.created; })
-        .filter(function (item) { return item.caption == "#site"; })
+        .filter(function (item) { return !!item.caption && item.caption.toLowerCase().indexOf("#site") >= 0; })
         .map(function (result) {
         var div = document.createElement('div');
         div.classList.add('carousel-item');

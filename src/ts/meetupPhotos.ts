@@ -2,7 +2,7 @@ function photosloaded(data: meetup.Photos) {
     let first = true;
     const images = data.data
         .sort((a, b) => b.created - a.created)
-        .filter(item => item.caption == "#site")
+        .filter(item => !!item.caption && item.caption.toLowerCase().indexOf("#site") >= 0)
         .map(result => {
             const div = document.createElement('div');
             div.classList.add('carousel-item');
