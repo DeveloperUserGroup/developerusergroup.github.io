@@ -11,11 +11,11 @@ function cleanName(name) {
     return name;
 }
 function loadData(id, event) {
-    var card = $(".upcomingFor" + id);
+    var card = $(".upcomingFor".concat(id));
     var time = event.time;
     var eventDate = new Date(event.time);
-    var when = eventDate.toLocaleDateString("en-za", dateDisplayOptions) + " " + eventDate.toLocaleTimeString("en-za");
-    var map = "https://www.google.com/maps/@" + event.venue.lat + "," + event.venue.lon + ",15z";
+    var when = "".concat(eventDate.toLocaleDateString("en-za", dateDisplayOptions), " ").concat(eventDate.toLocaleTimeString("en-za"));
+    var map = "https://www.google.com/maps/@".concat(event.venue.lat, ",").concat(event.venue.lon, ",15z");
     var nextEvent = {
         when: when,
         map: map,
@@ -31,7 +31,7 @@ function loadData(id, event) {
         var _a;
         var key = keyValue[0];
         var value = ((_a = keyValue[1]) !== null && _a !== void 0 ? _a : "").toString();
-        eventInfoText = eventInfoText.replace("!!" + key + "!!", value);
+        eventInfoText = eventInfoText.replace("!!".concat(key, "!!"), value);
     });
     eventInfo.html(eventInfoText);
     return { card: card, time: time };

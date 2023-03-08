@@ -19,7 +19,7 @@ function photosloaded(data) {
         img.classList.add('border-secondary');
         img.classList.add('lazy');
         img.setAttribute('data-src', result.photo_link);
-        img.alt = result.caption || "Meetup photo from " + result.member.name;
+        img.alt = result.caption || "Meetup photo from ".concat(result.member.name);
         div.appendChild(img);
         return div;
     });
@@ -32,7 +32,7 @@ function getPhotoCount(data) {
     var pageSize = 200;
     var offSet = Math.floor(data.meta.total_count / pageSize) - 1;
     $.ajax({
-        url: "https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=" + pageSize + "&offset=" + offSet,
+        url: "https://api.meetup.com/developerug/photos?&sign=true&photo-host=secure&page=".concat(pageSize, "&offset=").concat(offSet),
         dataType: "jsonp",
         jsonpCallback: "photosloaded"
     });
