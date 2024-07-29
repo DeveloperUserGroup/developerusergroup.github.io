@@ -29,20 +29,21 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/jquery": "^3.5.16",
-    "autoprefixer": "^10.4.13",
-    "bootstrap": "^5.2.3",
+    "@types/jquery": "^3.5.30",
+    "autoprefixer": "^10.4.19",
+    "bootstrap": "^5.3.3",
     "cpx": "^1.5.0",
     "node-sass-chokidar": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.11.0",
+    "npm-watch": "^0.13.0",
     "pidtree": "^0.6.0",
-    "postcss-cli": "^10.1.0",
+    "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0",
     "purify-css": "^1.2.5",
-    "typescript": "^4.9.5",
-    "uglify-js": "^3.17.4"
+    "typescript": "^5.5.4",
+    "uglify-js": "^3.19.1"
   },
   "dependencies": {
-    "vanilla-lazyload": "^17.8.3"
+    "vanilla-lazyload": "^19.1.3"
   }
 }

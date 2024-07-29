@@ -1,6 +1,6 @@
---- 
-layout: default 
-title: About 
+---
+layout: default
+title: About
 permalink: /about
 ---
 <div class="row">
@@ -31,17 +31,17 @@ permalink: /about
     <p>DevUG is run by a team of volunteers and assistants. Without their hard work it would not be possible for the group to exist.</p>
 </div>
 <div class="row">
-    {% assign members = site.data.members %} 
+    {% assign members = site.data.members %}
     {% for member in members %}
         {% include components/membercard.html member=member %}
     {% endfor %}
 </div>
 <div class="row">
         <h1>Emeritus</h1>
-        <p>These wonderful folk have worked hard in the past with DevUG and we want to acknowledge them here for their contributions.</p>
+        <p>These wonderful folk have worked hard in the past with DevUG, and we want to acknowledge them here for their contributions.</p>
     </div>
     <div class="row">
-        {% assign members = site.data.emeritus %} 
+        {% assign members = site.data.emeritus %}
         {% for member in members %}
             {% include components/membercard.html member=member %}
         {% endfor %}

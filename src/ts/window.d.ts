@@ -1,9 +1,9 @@
 export { };
 declare global {
-    interface Window { 
+    interface Window {
         loadEvents: any,
         dataLayer: Array<any>,
         myLazyLoad: ILazyLoad,
-        version: String, 
+        version: String,
     }
 }
