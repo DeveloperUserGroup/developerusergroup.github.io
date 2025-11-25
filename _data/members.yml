@@ -3,39 +3,25 @@
   twitter: theminidriver
   website:
   linkedin: bradley-van-aardt-25923510a
-  chapter: Johannesburg  
-  
-- name: "Bryan Richards"
-  photo: bryan.png
-  twitter: bryanrichards
-  website:
-  linkedin:
-  chapter: "Head Office"
+  chapter: Johannesburg
 
-- name: "Candice Mesk Herodotou"
+- name: "Candice Mesk"
   photo: candice.png
   twitter: candicemesk
   website: http://www.candicemesk.co.za/
   linkedin: candice-mesk-95a35633
   chapter: Johannesburg
 
-- name: "Enrique Geldenhuys"
-  photo: enrique.png
-  twitter: _eegee_
-  website:
-  linkedin: enriquegeldenhuys
-  chapter: Pretoria
-
 - name: "Ezra Jivan"
   photo:
   twitter: ezrajivan
   website:
-  linkedin: ezrajivan 
-  chapter: "Cape Town" 
+  linkedin: ezrajivan
+  chapter: "Cape Town"
 
 - name: "Joan Pearl"
   photo: jo.png
-  twitter: 
+  twitter:
   website: https://plus.google.com/u/0/collection/MN7rQE
   linkedin:
   chapter: Johannesburg
@@ -49,22 +35,14 @@
 
 - name: "Robert MacLean"
   photo: robert.jpg
-  twitter: rmaclean
+  twitter:
   website: https://www.sadev.co.za
   linkedin: macleanr
   chapter: "Cape Town"
 
-- name: "Joshua Willmot"
-  photo: joshua.jpg
-  twitter: Joshi_Will
-  website: 
-  linkedin: joshua-willmot-b5268664
-  chapter: "Cape Town"
-
-- name: "Ewald Horn"
-  photo: ewald.jpg
-  twitter: EwaldHorn
-  website: https://www.nofuss.co.za/profile.html 
-  linkedin: ewaldhorn
-  chapter: "Cape Town"
-
+- name: "Nkosinathi Ngwenya"
+  photo:
+  twitter:
+  website:
+  linkedin:
+  chapter: "Johannesburg"

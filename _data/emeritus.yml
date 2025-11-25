@@ -1,6 +1,6 @@
 - name: "Botha van der Vyver"
-  photo: botha.png 
-  twitter: 
+  photo: botha.png
+  twitter:
   website: https://www.justsolve.co.za
   linkedin:
 
@@ -27,3 +27,27 @@
   twitter: law91
   website:
   linkedin: lawrence-puttergill-6785928a
+
+- name: "Bryan Richards"
+  photo: bryan.png
+  twitter: bryanrichards
+  website:
+  linkedin:
+
+- name: "Joshua Willmot"
+  photo: joshua.jpg
+  twitter: Joshi_Will
+  website:
+  linkedin: joshua-willmot-b5268664
+
+- name: "Ewald Horn"
+  photo: ewald.jpg
+  twitter: EwaldHorn
+  website: https://www.nofuss.co.za/profile.html
+  linkedin: ewaldhorn
+
+- name: "Enrique Geldenhuys"
+  photo: enrique.png
+  twitter: _eegee_
+  website:
+  linkedin: enriquegeldenhuys

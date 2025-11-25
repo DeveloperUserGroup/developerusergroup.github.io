@@ -3,12 +3,12 @@
     "_site"
   ],
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es2024",
     "module": "commonjs",
-    "lib": ["es2017", "dom"],
+    "lib": ["ESNext", "dom"],
     "outDir": "./js/",
     "rootDir": "./src/ts",
     "strict": true,
-    "esModuleInterop": true 
+    "esModuleInterop": true
   }
 }
